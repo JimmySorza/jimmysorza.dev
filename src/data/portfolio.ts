@@ -48,6 +48,8 @@ export interface Project {
   description: string
   problem?: string
   solution?: string
+  liveUrl?: string
+  repositoryUrl?: string
   stack: string[]
   featured?: boolean
 }
@@ -286,6 +288,7 @@ export const portfolio: PortfolioData = {
       status: 'Live',
       description:
         'This website was built using React, TypeScript, Tailwind CSS, Framer Motion, and Vercel.',
+      repositoryUrl: 'https://github.com/JimmySorza/jimmysorza.dev',
       stack: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
     },
   ],

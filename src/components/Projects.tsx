@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, ExternalLink } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { portfolio, sectionIntro } from '../data/portfolio'
 
@@ -55,11 +55,32 @@ export function Projects() {
                   </p>
                 ) : null}
               </div>
-              <ArrowUpRight
-                aria-hidden="true"
-                className="shrink-0 text-[#888888] transition group-hover:text-[#ededed]"
-                size={20}
-              />
+              <div className="flex shrink-0 items-center gap-3">
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Live Demo"
+                    aria-label={`${project.title} live demo`}
+                    className="text-[#888888] transition group-hover:text-[#ededed]"
+                  >
+                    <ExternalLink aria-hidden="true" size={20} />
+                  </a>
+                ) : null}
+                {project.repositoryUrl ? (
+                  <a
+                    href={project.repositoryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Source Code"
+                    aria-label={`${project.title} source code`}
+                    className="text-[#888888] transition group-hover:text-[#ededed]"
+                  >
+                    <ArrowUpRight aria-hidden="true" size={20} />
+                  </a>
+                ) : null}
+              </div>
             </div>
             <ul className="mt-6 flex flex-wrap gap-2" aria-label={`${project.title} technologies`}>
               {project.stack.map((item) => (
